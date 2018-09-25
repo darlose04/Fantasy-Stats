@@ -1,0 +1,19 @@
+<% include partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Teams</h3>
+    </div>
+  </div>
+  <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <% teams.forEach(function(team) { %>
+      <div class="col-md-3 col-sm-6">
+        <img src="<%= team.image %>" alt="">
+        <div class="caption">
+          <h4><%= team.name %></h4>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
