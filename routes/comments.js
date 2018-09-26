@@ -47,7 +47,7 @@ router.delete("/:comment_id", middleWare.checkCommentOwnership, function(req, re
       res.redirect("back");
     } else {
       req.flash("success", "Comment deleted");
-      res.redirects("/discussions/" + req.params.id);
+      res.redirect("/discussions/" + req.params.id);
     }
   });
 });
