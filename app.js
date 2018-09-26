@@ -8,10 +8,19 @@ var express = require("express"),
     methodOverride = require("method-override"),
     User = require("./models/user");
 
+var PORT = process.env.PORT || 2500;
 
+// require the routes
+var discussionRoutes = require("./routes/discussions"),
+  commentRoutes = require("./routes/comments"),
+  indexRoutes = require("./routes/index"),
+  teamRoutes = require("./routes/teams");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+
+
+// PASSPORT CONFIGURATION
 
 
 app.get("/", function(req, res) {
@@ -22,6 +31,6 @@ app.get("/teams", function(req, res) {
   res.render("teams");
 });
 
-app.listen(2500, function() {
+app.listen(PORT, function() {
   console.log("Fantasy Stats server has started!");
 });
