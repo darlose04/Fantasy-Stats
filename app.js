@@ -16,6 +16,11 @@ var discussionRoutes = require("./routes/discussions"),
   indexRoutes = require("./routes/index"),
   teamRoutes = require("./routes/teams");
 
+var url = process.env.DBURL || "mongodb://localhost:27017/fantasy_stats_app";
+mongoose.connect(url, {useNewUrlParser: true});
+
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
