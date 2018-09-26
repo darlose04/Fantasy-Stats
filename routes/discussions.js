@@ -41,3 +41,8 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
   });
 });
 
+// NEW - show form to create a new discussion
+router.get("/new", middleware.isLoggedIn, function(req, res) {
+  res.render("discussions/new");
+});
+
