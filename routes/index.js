@@ -15,3 +15,18 @@ router.get("/register", function(req, res) {
   res.render("register");
 });
 
+// handle sign up logic
+router.post("/register", function(req, res) {
+  var newUser = new User({username: req.body.username});
+  User.register(newUser, req.body.password, function(err, user) {
+    if (err) {
+      console.log(err);
+      return res.render("register", {"error": err.message});
+    }
+    passport.authenticate("local")(req, res, function() {
+      req.flash("success", "Welcome to The League of Ordinary Gentlemen Fantasy Stats " + user.username);
+      res.redirect("/");
+    });
+  });
+});
+
