@@ -26,15 +26,38 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 // PASSPORT CONFIGURATION
+app.use(
+  require("express-session")({
+    secret: "Shadow is the best dog ever",
+    resave: false,
+    saveUninitialized: false
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-
-app.get("/", function(req, res) {
-  res.render("landing");
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.user;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  next();
 });
 
-app.get("/teams", function(req, res) {
-  res.render("teams");
-});
+app.use("/", indexRoutes);
+app.use("/discussions", discussionRoutes);
+app.use("/discussions/:id/comments", commentRoutes);
+
+
+// app.get("/", function(req, res) {
+//   res.render("landing");
+// });
+
+// app.get("/teams", function(req, res) {
+//   res.render("teams");
+// });
 
 app.listen(PORT, function() {
   console.log("Fantasy Stats server has started!");
