@@ -31,7 +31,7 @@ middlewareObj.checkDiscussionOwnership = function(req, res, next) {
 middlewareObj.checkCommentOwnership = function(req, res, next) {
   // is user logged in?
   if (req.isAuthenticated()) {
-    Comment.findById(req.params.comment._id, function(err, foundComment) {
+    Comment.findById(req.params.comment_id, function(err, foundComment) {
       if (err || !foundComment) {
         req.flash("error", "Comment not found");
         res.redirect("back");
