@@ -46,3 +46,18 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
   res.render("discussions/new");
 });
 
+// SHOW - shows more info about one discussion
+router.get("/:id", function(req, res) {
+  //find the discussion with the provided ID
+  Discussion.findById(req.params.id).populate("comments").exec(function(err, foundDiscussion) {
+    if (err || !foundDiscussion) { // this OR statement prevents someone from changing the url id and crashing the app
+      req.flash("error", "Discussion not found");
+      res.redirect("back");
+    } else {
+      console.log(foundDiscussion);
+      // render show template with that discussion
+      res.render("discussions/show", { discussion: foundDiscussion});
+    }
+  });
+});
+
