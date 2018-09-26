@@ -61,3 +61,17 @@ router.get("/:id", function(req, res) {
   });
 });
 
+// Don't think I will need to use an edit or update route, just a destroy route
+
+// DESTROY discussion
+router.delete("/:id", middleware.checkDiscussionOwnership, function(req, res) {
+  Discussion.findByIdAndRemove(req.params.id, function(err) {
+    if(err) {
+      res.redirect("/discussions");
+    } else {
+      res.redirect("/discussions");
+    }
+  });
+});
+
+module.exports = router;
