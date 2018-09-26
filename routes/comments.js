@@ -37,3 +37,19 @@ router.post("/", middleWare.isLoggedIn, function(req, res) {
     }
   });
 });
+
+// don't need to add edit or update routes for comments
+
+// DESTROY comment
+router.delete("/:comment_id", middleWare.checkCommentOwnership, function(req, res) {
+  Comment.findByIdAndRemove(req.params.comment_id, function(err) {
+    if(err) {
+      res.redirect("back");
+    } else {
+      req.flash("success", "Comment deleted");
+      res.redirects("/discussions/" + req.params.id);
+    }
+  });
+});
+
+module.exports = router;
