@@ -49,15 +49,7 @@ app.use(function(req, res, next) {
 app.use("/", indexRoutes);
 app.use("/discussions", discussionRoutes);
 app.use("/discussions/:id/comments", commentRoutes);
-
-
-// app.get("/", function(req, res) {
-//   res.render("landing");
-// });
-
-// app.get("/teams", function(req, res) {
-//   res.render("teams");
-// });
+app.use("/teams", teamRoutes);
 
 app.listen(PORT, function() {
   console.log("Fantasy Stats server has started!");
