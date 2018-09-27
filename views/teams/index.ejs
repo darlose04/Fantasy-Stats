@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Teams</h2>
+    </div>
+    <hr>
+    <div id="table">
+      <table class="table">
+        <thead>
+         <tr>
+          <th scope="col">Name</th>
+         </tr> 
+        </thead>
+        <tbody>
+          <% teams.forEach(function(team) { %>
+            <tr>
+              <td>
+                <a href="/teams/<%= team._id %>">
+                <%= team.name %></a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    
+      
+    
+    
+  </div>
+</div>
+
+<% include ../partials/footer %>
