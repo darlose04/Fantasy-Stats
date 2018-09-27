@@ -1,20 +1,42 @@
 var mongoose = require("mongoose");
 
+// var teamSchema = new mongoose.Schema({
+//   // name: String,
+//   // Week: Number,
+//   // AVG: Number,
+//   // R: Number,
+//   // HR: Number,
+//   // RBI: Number,
+//   // SB: Number,
+//   // OPS: Number,
+//   // IP: Number,
+//   // SV: Number,
+//   // K: Number,
+//   // ERA: Number,
+//   // WHIP: Number,
+//   // QS: Number
+
+// });
+
 var teamSchema = new mongoose.Schema({
   name: String,
-  Week: Number,
-  AVG: Number,
-  R: Number,
-  HR: Number,
-  RBI: Number,
-  SB: Number,
-  OPS: Number,
-  IP: Number,
-  SV: Number,
-  K: Number,
-  ERA: Number,
-  WHIP: Number,
-  QS: Number
+  data: [
+    {
+      Week: String,
+      AVG: Number,
+      R: Number,
+      HR: Number,
+      RBI: Number,
+      SB: Number,
+      OPS: Number,
+      IP: Number,
+      SV: Number,
+      K: Number,
+      ERA: Number,
+      WHIP: Number,
+      QS: Number
+    }
+  ]
 });
 
 module.exports = mongoose.model("Team", teamSchema);
