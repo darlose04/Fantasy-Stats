@@ -3,10 +3,52 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1><%= team.name %></h1>
+      
+      <h3><%= team.name %></h3>
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">WEEK</th>
+            <th scope="col">AVG</th>
+            <th scope="col">R</th>
+            <th scope="col">HR</th>
+            <th scope="col">RBI</th>
+            <th scope="col">SB</th>
+            <th scope="col">OPS</th>
+            <th scope="col">IP</th>
+            <th scope="col">SV</th>
+            <th scope="col">K</th>
+            <th scope="col">ERA</th>
+            <th scope="col">WHIP</th>
+            <th scope="col">QS</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < team.data.length; i++) { %>
+          <tr>
+
+            <td><%= team.data[i].WEEK %></td>
+            <td><%= team.data[i].AVG %></td>
+            <td><%= team.data[i].R %></td>
+            <td><%= team.data[i].HR %></td>
+            <td><%= team.data[i].RBI %></td>
+            <td><%= team.data[i].SB %></td>
+            <td><%= team.data[i].OPS %></td>
+            <td><%= team.data[i].IP %></td>
+            <td><%= team.data[i].SV %></td>
+            <td><%= team.data[i].K %></td>
+            <td><%= team.data[i].ERA %></td>
+            <td><%= team.data[i].WHIP %></td>
+            <td><%= team.data[i].QS %></td>
+          </tr>
+            <% } %>
+        </tbody>
+      </table>
+      
     </div>
   </div>
 
 </div>
 
-<% include ../partials/header %>
+<% include ../partials/footer %>
