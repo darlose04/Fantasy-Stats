@@ -12,6 +12,14 @@ router.get("/", function(req, res) {
       res.render("teams/index", {teams: allTeams});
     }
   });
+
+  Total.find({}, function(err, allTotals) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.render("teams/index", {totals: allTotals});
+    }
+  });
 });
 
 // SHOW info about one team
