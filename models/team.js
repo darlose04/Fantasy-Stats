@@ -4,7 +4,7 @@ var teamSchema = new mongoose.Schema({
   name: String,
   data: [
     {
-      Week: String,
+      WEEK: String,
       AVG: Number,
       R: Number,
       HR: Number,
