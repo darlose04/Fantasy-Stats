@@ -14,7 +14,8 @@ var PORT = process.env.PORT || 2500;
 var discussionRoutes = require("./routes/discussions"),
   commentRoutes = require("./routes/comments"),
   indexRoutes = require("./routes/index"),
-  teamRoutes = require("./routes/teams");
+  teamRoutes = require("./routes/teams"),
+  totalRoutes = require("./routes/totals");
 
 var url = process.env.DBURL || "mongodb://localhost:27017/fantasy_stats_app";
 mongoose.connect(url, {useNewUrlParser: true});
@@ -50,6 +51,7 @@ app.use("/", indexRoutes);
 app.use("/discussions", discussionRoutes);
 app.use("/discussions/:id/comments", commentRoutes);
 app.use("/teams", teamRoutes);
+app.use("/totals", totalRoutes);
 
 app.listen(PORT, function() {
   console.log("Fantasy Stats server has started!");
