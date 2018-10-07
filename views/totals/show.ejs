@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h3>
+        <%= total.name %>
+      </h3>
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">TEAM NAME</th>
+            <th scope="col">AVG</th>
+            <th scope="col">R</th>
+            <th scope="col">HR</th>
+            <th scope="col">RBI</th>
+            <th scope="col">SB</th>
+            <th scope="col">OPS</th>
+            <th scope="col">IP</th>
+            <th scope="col">SV</th>
+            <th scope="col">K</th>
+            <th scope="col">ERA</th>
+            <th scope="col">WHIP</th>
+            <th scope="col">QS</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for (var i = 0; i < total.data.length; i++) { %>
+          <tr>
+            <td><%= total.data[i].TEAM %></td>
+            <td><%= total.data[i].AVG %></td>
+            <td><%= total.data[i].R %></td>
+            <td><%= total.data[i].HR %></td>
+            <td><%= total.data[i].RBI %></td>
+            <td><%= total.data[i].SB %></td>
+            <td><%= total.data[i].OPS %></td>
+            <td><%= total.data[i].IP %></td>
+            <td><%= total.data[i].SV %></td>
+            <td><%= total.data[i].K %></td>
+            <td><%= total.data[i].ERA %></td>
+            <td><%= total.data[i].WHIP %></td>
+            <td><%= total.data[i].QS %></td>
+          </tr>
+          <% } %>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
+<% include ../partials/footer %>
