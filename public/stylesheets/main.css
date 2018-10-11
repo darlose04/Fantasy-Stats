@@ -4,16 +4,22 @@
   background-color: #A3A9F0;
 }
 
+.navbar .collapse .navbar-brand {
+  font-weight: bold;
+}
 
+.navbar .collapse .navbar-nav .nav-item .nav-link{
+  color: black;
+}
 
 
 
 /* home/landing page */
 
-body {
+/* body {
   background-image: url(http://www.trbimg.com/img-5965135d/turbine/ct-wrigley-field-in-mix-for-future-all-star-game-20170711);
   background-size: 100% 100%;
-}
+} */
 
 
 
