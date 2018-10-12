@@ -31,9 +31,9 @@ router.post("/register", function(req, res) {
 });
 
 // show login form
-router.get("/login", function(req, res) {
-  res.render("login");
-});
+// router.get("/login", function(req, res) {
+//   res.render("login");
+// });
 
 // handles login logic // will have to use middleware here
 router.post("/login", passport.authenticate("local", {
