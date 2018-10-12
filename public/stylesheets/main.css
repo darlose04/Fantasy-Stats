@@ -52,10 +52,27 @@ body .landing-login p {
   text-align: center;
 }
 
-
-
-
+/* Discussions page */
 
 .discussion-comments {
   list-style: none;
+}
+
+/* Register/sign up page */
+
+body .register-form {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 250px;
+  padding: 20px 20px;
+}
+
+body .register-form form input {
+  margin: 10px 10px;
+}
+
+body .register-form form button {
+  margin-top: 10px;
+  width: 180px;
 }
