@@ -1,5 +1,10 @@
 /* header file */
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
   background-color: #A3A9F0;
 }
@@ -21,10 +26,31 @@
   background-size: 100% 100%;
 } */
 
+body .landing-login {
+  display: block;
+  margin: auto;
+  text-align: center;
+  /* border: 1px solid red;
+  background-color: yellow; */
+  width: 250px;
+  padding: 20px 20px;
+  /* box-sizing: border-box; */
+}
 
+body .landing-login form input {
+  margin: 10px 10px;
+  
+}
 
+body .landing-login form button {
+  margin-top: 10px;
+  width: 180px; 
+}
 
-
+body .landing-login p {
+  width: 200px;
+  text-align: center;
+}
 
 
 
