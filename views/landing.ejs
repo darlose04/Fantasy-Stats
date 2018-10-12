@@ -1,6 +1,23 @@
 <% include partials/header %>
 
-  <h1>Welcome to the League of Ordinary Gentlemen Stats Page!</h1>
+<!-- <h1>Welcome to the League of Ordinary Gentlemen</h1> -->
+
+<!-- create buttons for signup and login -->
+<% if(!currentUser) { %>
+<div class="container landing-login">
   
+  <h1>Login</h1>
+  <form action="/login" method="POST">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <button class="btn btn-primary">Login</button>
+  </form>
+  <p>If you don't have an account, sign up <a href="/register">here</a>.</p>
+  
+</div>
+<% } %>
+
+
+
 
 <% include partials/footer %>
