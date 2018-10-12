@@ -26,6 +26,13 @@ body {
   background-size: 100% 100%;
 } */
 
+#home-title {
+  text-align: center;
+  /* border: 1px solid red; */
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
 body .landing-login {
   display: block;
   margin: auto;
@@ -52,7 +59,7 @@ body .landing-login p {
   text-align: center;
 }
 
-/* Discussions page */
+/* Discussions comment page */
 
 .discussion-comments {
   list-style: none;
