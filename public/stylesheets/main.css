@@ -59,6 +59,13 @@ body .landing-login p {
   text-align: center;
 }
 
+/* Discussion Index page */
+
+.discussion-index {
+  /* border: 1px solid red; */
+  margin: 25px auto;
+}
+
 /* Discussions comment page */
 
 .discussion-comments {
