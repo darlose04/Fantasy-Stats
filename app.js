@@ -54,5 +54,5 @@ app.use("/teams", teamRoutes);
 app.use("/totals", totalRoutes);
 
 app.listen(PORT, function() {
-  console.log("Fantasy Stats server has started!");
+  console.log(`Fantasy Stats server has started on port ${PORT}!`);
 });
