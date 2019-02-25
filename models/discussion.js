@@ -16,6 +16,6 @@ discussionSchema = new mongoose.Schema({
       ref: "Comment"
     }
   ]
-});
+}, {collection: 'discussions'});
 
 module.exports = mongoose.model("Discussion", discussionSchema);

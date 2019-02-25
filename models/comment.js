@@ -9,6 +9,6 @@ var commentSchema = new mongoose.Schema({
     },
     username: String
   }
-});
+}, {collection: 'comments'});
 
 module.exports = mongoose.model("Comment", commentSchema);

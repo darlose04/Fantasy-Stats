@@ -19,6 +19,6 @@ var teamSchema = new mongoose.Schema({
       QS: Number
     }
   ]
-});
+}, {collection: 'teams'});
 
 module.exports = mongoose.model("Team", teamSchema);

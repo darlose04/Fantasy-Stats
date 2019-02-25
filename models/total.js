@@ -19,6 +19,6 @@ var totalSchema = new mongoose.Schema({
       QS: Number
     }
   ]
-});
+}, {collection: 'totals'});
 
 module.exports = mongoose.model("Total", totalSchema);
