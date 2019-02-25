@@ -17,8 +17,15 @@ var discussionRoutes = require("./routes/discussions"),
   teamRoutes = require("./routes/teams"),
   totalRoutes = require("./routes/totals");
 
-var url = process.env.DBURL || "mongodb://localhost:27017/fantasy_stats_app";
-mongoose.connect(url, {useNewUrlParser: true});
+// var url = process.env.DBURL || "mongodb://localhost:27017/fantasy_stats_app";
+// mongoose.connect(url, {useNewUrlParser: true});
+
+// configure db for mongo atlas
+const db = require('./config/keys').MongoURI;
+
+mongoose.connect(db, {useNewUrlParser: true, dbName: 'fantasy_stats_app'})
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log(err));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
