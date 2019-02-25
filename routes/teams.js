@@ -22,7 +22,6 @@ router.get("/:id", function(req, res) {
       req.flash("error", "Team not found");
       res.redirect("back");
     } else {
-      console.log(foundTeam);
       // render show template with that team
       res.render("teams/show", {team: foundTeam});
     }

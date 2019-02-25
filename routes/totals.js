@@ -22,7 +22,6 @@ router.get("/:id", function (req, res) {
       req.flash("error", "Total not found");
       res.redirect("back");
     } else {
-      console.log(foundTotal);
       // render show template with that total
       res.render("totals/show", { total: foundTotal });
     }
